@@ -1,7 +1,7 @@
 {
-  "name": "adalo-arbitrary-javascript",
+  "name": "adalo-param-url",
   "description": "Some times you just want to write code",
-  "version": "1.0.6",
+  "version": "1.0.32",
   "main": "index.js",
   "license": "ISC",
   "author": "Steven McKeown",
@@ -12,11 +12,11 @@
   },
   "adalo": {
     "logo": "./example-logo.png",
-    "displayName": "Adalo Arbitrary Javascript",
+    "displayName": "Adalo Params URL",
     "components": [
       {
-        "name": "ArbitraryJavascript",
-        "manifest": "./src/components/ArbitraryJavascript/manifest.json"
+        "name": "ParamURL",
+        "manifest": "./src/components/ParamURL/manifest.json"
       }
     ]
   },

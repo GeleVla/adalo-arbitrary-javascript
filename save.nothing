@@ -1,0 +1,1 @@
+return `utm_source: ${new URLSearchParams(window.location.search).get('utm_source')}, via: ${new URLSearchParams(window.location.search).get('via')}`;

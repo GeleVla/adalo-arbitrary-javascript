@@ -1,0 +1,81 @@
+import React, { useState, useEffect } from "react";
+import { Text, View, StyleSheet } from "react-native";
+
+const ParamURL = (props) => {
+  const {
+    trigger,
+    paramOne,
+    paramTwo,
+    paramThree,
+    paramOneResult,
+    paramTwoResult,
+    paramThreeResult,
+    onError,
+    editor,
+    styles,
+  } = props;
+
+  const [executionParamOneResult, setParamOneResult] = useState("");
+  const [executionParamTwoResult, setParamTwoResult] = useState("");
+  const [executionParamThreeResult, setParamThreeResult] = useState("");
+
+  const execute = () => {
+    try {
+      const paramOneValue = new URLSearchParams(window.location.search).get(paramOne);
+      const paramTwoValue = new URLSearchParams(window.location.search).get(paramTwo);
+      const paramThreeValue = new URLSearchParams(window.location.search).get(paramThree);
+
+      // const { paramOneResult } = this.props;
+      // const { paramTwoResult } = this.props;
+      // const { paramThreeResult } = this.props;
+
+      const paramOneResultArg = paramOneValue ? `${paramOneValue}` : null;
+      const paramTwoResultArg = paramTwoValue ? `${paramTwoValue}` : null;
+      const paramThreeResultArg = paramThreeValue ? `${paramThreeValue}` : null;
+
+      if (paramOneResult) {
+        paramOneResult(paramOneResultArg);
+        setParamOneResult(paramOneResultArg);
+      }
+      if (paramTwoResult) {
+        paramTwoResult(paramTwoResultArg);
+        setParamTwoResult(paramTwoResultArg);
+      }
+      if (paramThreeResult) {
+        paramThreeResult(paramThreeResultArg);
+        setParamThreeResult(paramThreeResultArg);
+      }
+    } catch (error) {
+      if (onError) {
+        onError(JSON.stringify(error));
+      }
+      setParamOneResult(JSON.stringify(error));
+    }
+  };
+
+  useEffect(() => {
+    if (trigger === "true" && !editor) {
+      execute();
+    }
+  }, [trigger, editor]);
+
+  return (
+    <View>
+      <Text
+        style={{
+          color: styles.script?.color,
+          fontFamily: styles.script?.fontFamily,
+          fontSize: styles.script?.fontSize,
+          fontWeight: styles.script?.fontWeight,
+          textAlign: styles.script?.textAlign,
+        }}
+      >
+        {`${paramOne}: ${executionParamOneResult} `}
+        {`${paramTwo}: ${executionParamTwoResult} `}
+        {`${paramThree}: ${executionParamThreeResult} `}
+      </Text>
+    </View>
+  );
+};
+
+export default ParamURL;
