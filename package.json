@@ -1,7 +1,7 @@
 {
   "name": "adalo-param-url",
   "description": "Some times you just want to write code",
-  "version": "1.0.32",
+  "version": "1.0.34",
   "main": "index.js",
   "license": "ISC",
   "author": "Steven McKeown",

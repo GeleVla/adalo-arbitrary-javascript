@@ -64,7 +64,6 @@ const ParamURL = (props) => {
           textAlign: styles.script?.textAlign,
         }}
       >
-        {`${executionParamResult}`}
       </Text>
     </View>
   );
