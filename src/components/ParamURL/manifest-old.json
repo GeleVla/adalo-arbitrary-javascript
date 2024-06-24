@@ -19,6 +19,32 @@
       }
     },
     {
+      "name": "paramTwo",
+      "displayName": "place parameter here",
+      "type": "text",
+      "default": "utm_source",
+      "styles": {
+        "fontFamily": "@body",
+        "color": "@text",
+        "fontWeight": 100,
+        "fontSize": 12,
+        "textAlignment": "left"
+      }
+    },
+    {
+      "name": "paramThree",
+      "displayName": "place parameter here",
+      "type": "text",
+      "default": "utm_content",
+      "styles": {
+        "fontFamily": "@body",
+        "color": "@text",
+        "fontWeight": 100,
+        "fontSize": 12,
+        "textAlignment": "left"
+      }
+    },
+    {
       "name": "trigger",
       "displayName": "Set this to true to execute the function",
       "type": "text"

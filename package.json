@@ -1,7 +1,7 @@
 {
   "name": "adalo-param-url",
   "description": "Some times you just want to write code",
-  "version": "1.0.34",
+  "version": "1.0.35",
   "main": "index.js",
   "license": "ISC",
   "author": "Steven McKeown",
@@ -26,5 +26,6 @@
     "react-art": "^16.6.0",
     "react-dom": "^16.9.0",
     "react-native-web": "^0.9.5"
-  }
+  },
+  "dependencies": {}
 }
